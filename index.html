@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라즈베리파이 센서 모니터링</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🌡️ 라즈베리파이 센서 모니터링 대시보드</h1>
+      <p>실시간 온도, 습도, 기압 및 센서 데이터를 확인하세요</p>
+    </header>
+
+    <!-- 메인 화면: 사용자 목록 -->
+    <div id="main-screen" class="screen active">
+      <div class="users-grid" id="users-grid">
+        <div class="loading">데이터를 불러오는 중...</div>
+      </div>
+      <div class="user-count" id="user-count">
+        💻 등록된 기기: 0대
+      </div>
+    </div>
+
+    <!-- 상세 화면: 개별 사용자 센서 데이터 -->
+    <div id="detail-screen" class="screen">
+      <div class="detail-header">
+        <button id="back-btn" class="back-button">← 목록으로</button>
+        <h2 id="user-name"></h2>
+        <p id="user-id"></p>
+        <div class="last-update">마지막 업데이트: <span id="last-timestamp"></span></div>
+      </div>
+
+      <div class="sensor-grid" id="sensor-data">
+        <!-- 센서 데이터가 여기에 동적으로 추가됩니다 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
